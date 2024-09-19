@@ -4,6 +4,11 @@ ctxtime provides testable time.Now.
 
 ## Usage
 
+By default, `ctxtime.Now(ctx)` returns the current time in UTC.
+ctxtimetest.SetFixedNow' can be used to set the return value of `ctxtime.Now(ctx)`.
+The return value will be assocciated the test id that can be obtained from the context. 
+However, if `testing.Testing` returns false, `ctxtimetest.SetFixedNow` won't affect `ctxtime.Now`.
+
 ```go
 package a_test
 
