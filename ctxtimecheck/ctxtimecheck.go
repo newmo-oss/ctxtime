@@ -10,7 +10,7 @@ import (
 
 const doc = "ctxtimecheck finds calling time.Now instead of ctxtime.Now"
 
-// Analyzer is ...
+// Analyzer finds calling time.Now instead of ctxtime.Now.
 var Analyzer = &analysis.Analyzer{
 	Name: "ctxtimecheck",
 	Doc:  doc,
