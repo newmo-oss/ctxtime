@@ -1,6 +1,6 @@
 # ctxtime [![Go Reference](https://pkg.go.dev/badge/github.com/newmo-oss/ctxtimeo.svg)](https://pkg.go.dev/github.com/newmo-oss/ctxtime)[![Go Report Card](https://goreportcard.com/badge/github.com/newmo-oss/ctxtime)](https://goreportcard.com/report/github.com/newmo-oss/ctxtime)
 
-ctxtime privides testable time.Now
+ctxtime provides testable time.Now.
 
 ## Usage
 
