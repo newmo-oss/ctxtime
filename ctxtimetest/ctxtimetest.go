@@ -62,7 +62,7 @@ func loadFixedTime(ctx context.Context) (time.Time, bool) {
 	}
 
 	tm, ok := v.(time.Time)
-	if !ok || tm.IsZero() {
+	if !ok {
 		return time.Time{}, false
 	}
 
@@ -71,7 +71,7 @@ func loadFixedTime(ctx context.Context) (time.Time, bool) {
 
 func nowForTest(ctx context.Context) time.Time {
 	tm, ok := loadFixedTime(ctx)
-	if !ok || tm.IsZero() {
+	if !ok {
 		return internal.DefaultNow(ctx)
 	}
 	return tm
