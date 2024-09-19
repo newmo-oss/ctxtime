@@ -1,6 +1,6 @@
-# newmotime [![Go Reference](https://pkg.go.dev/badge/github.com/newmo-oss/newmotimeo.svg)](https://pkg.go.dev/github.com/newmo-oss/newmotime)[![Go Report Card](https://goreportcard.com/badge/github.com/newmo-oss/newmotime)](https://goreportcard.com/report/github.com/newmo-oss/newmotime)
+# ctxtime [![Go Reference](https://pkg.go.dev/badge/github.com/newmo-oss/ctxtimeo.svg)](https://pkg.go.dev/github.com/newmo-oss/ctxtime)[![Go Report Card](https://goreportcard.com/badge/github.com/newmo-oss/ctxtime)](https://goreportcard.com/report/github.com/newmo-oss/ctxtime)
 
-newmotime privides testable time.Now
+ctxtime privides testable time.Now
 
 ## Usage
 
@@ -13,18 +13,18 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/newmo-oss/newmotime"
-	"github.com/newmo-oss/newmotime/newmotimetest"
+	"github.com/newmo-oss/ctxtime"
+	"github.com/newmo-oss/ctxtime/ctxtimetest"
 	"github.com/newmo-oss/testid"
 )
 
 func Test(t *testing.T) {
 	tid := uuid.NewString()
 	ctx := testid.WithValue(context.Background(), tid)
-	now := newmotime.Now(ctx)
-	newmotimetest.SetFixedNow(t, ctx, now)
+	now := ctxtime.Now(ctx)
+	ctxtimetest.SetFixedNow(t, ctx, now)
 	time.Sleep(10 * time.Second)
-	now2 := newmotime.Now(ctx)
+	now2 := ctxtime.Now(ctx)
 	t.Log(now == now2) // true
 }
 ```

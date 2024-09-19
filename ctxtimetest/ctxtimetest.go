@@ -1,4 +1,4 @@
-package newmotimetest
+package ctxtimetest
 
 import (
 	"context"
@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/newmo-oss/newmotime/internal"
+	"github.com/newmo-oss/ctxtime/internal"
 	"github.com/newmo-oss/testid"
 )
 
@@ -18,7 +18,7 @@ func init() {
 	}
 }
 
-// SetFixedNow fixes the return value of newmotime.Now.
+// SetFixedNow fixes the return value of ctxtime.Now.
 // The fixed current time is set each test id which get from [testid.FromContext].
 // If any test id cannot obtain from the context, the test will be fail with t.Fatal.
 // The fixed current time will be remove by t.Cleanup.
