@@ -7,9 +7,9 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/newmo-oss/testid"
 	"github.com/newmo-oss/ctxtime"
 	"github.com/newmo-oss/ctxtime/ctxtimetest"
+	"github.com/newmo-oss/testid"
 )
 
 func TestWithFixedNow(t *testing.T) {
@@ -20,7 +20,7 @@ func TestWithFixedNow(t *testing.T) {
 
 		ctx := testid.WithValue(context.Background(), uuid.New().String())
 		now1 := ctxtime.Now(ctx)
-		time.Sleep(1 * time.Nanosecond)
+		time.Sleep(100 * time.Nanosecond)
 		now2 := ctxtime.Now(ctx)
 		if now1.IsZero() || now2.IsZero() || now1 == now2 || now1.After(now2) {
 			t.Errorf("Now must return current time without calling SetFixedNow: %v %v", now1, now2)
@@ -58,7 +58,7 @@ func TestWithFixedNow(t *testing.T) {
 		ctx := testid.WithValue(context.Background(), uuid.New().String())
 
 		now1 := ctxtime.Now(ctx)
-		time.Sleep(1 * time.Nanosecond)
+		time.Sleep(100 * time.Nanosecond)
 		now2 := ctxtime.Now(ctx)
 
 		ctxtimetest.SetFixedNow(t, ctx, now1)
@@ -88,6 +88,29 @@ func TestWithFixedNow(t *testing.T) {
 		ctxtimetest.SetFixedNow(fakeT, ctx, now)
 		if !fakeT.callFailNow {
 			t.Error("ctxtimetest.SetFixedNow must call t.Fatal/t.Fatalf/t.FailNow when test id was not related to the context")
+		}
+	})
+
+	t.Run("unset test ID and not calling SetFixedNow", func(t *testing.T) {
+		t.Parallel()
+
+		ctx := context.Background()
+		now1 := ctxtime.Now(ctx)
+		time.Sleep(100 * time.Nanosecond)
+		now2 := time.Now().In(time.UTC)
+		if now1.IsZero() || now2.Before(now1) {
+			t.Error("ctxtime.Now must return the current time in unit tests")
+		}
+	})
+
+	t.Run("set zero time", func(t *testing.T) {
+		t.Parallel()
+
+		ctx := testid.WithValue(context.Background(), uuid.New().String())
+		ctxtimetest.SetFixedNow(t, ctx, time.Time{})
+		fixed := ctxtime.Now(ctx)
+		if !fixed.IsZero() {
+			t.Errorf("SetFixedNow must allow zero time")
 		}
 	})
 }
