@@ -22,7 +22,7 @@ func TestWithFixedNow(t *testing.T) {
 		now1 := ctxtime.Now(ctx)
 		time.Sleep(1 * time.Nanosecond)
 		now2 := ctxtime.Now(ctx)
-		if now1 == now2 || now1.After(now2) {
+		if now1.IsZero() || now2.IsZero() || now1 == now2 || now1.After(now2) {
 			t.Errorf("Now must return current time without calling SetFixedNow: %v %v", now1, now2)
 		}
 	})
