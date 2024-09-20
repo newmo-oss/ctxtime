@@ -34,5 +34,29 @@ func Test(t *testing.T) {
 }
 ```
 
+## Linter
+
+ctxtimecheck is a linter that finds calls of `time.Now` in your code.
+
+You can install ctxtimecheck by go install.
+
+```sh
+$ go install github.com/newmo-oss/ctxtime/ctxtimecheck/cmd/ctxtimecheck@latest
+```
+
+ctxtimecheck can be run with the go vet command.
+
+```sh
+$ go vet -vettool=$(which ctxtimecheck) ./...
+```
+
+If you are already using [gostaticanalysis/called], it can be used instead of ctxtimecheck as follows.
+
+```sh
+$ go vet -vettool=$(which called) -called.funcs="time.Now" ./...
+```
+
 ## License
 MIT
+
+[gostaticanalysis/called]: https://github.com/gostaticanalysis/called
