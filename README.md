@@ -36,7 +36,7 @@ func Test(t *testing.T) {
 
 ## Linter
 
-ctxtimecheck is a linter which finds calling `time.Now` in your codes.
+ctxtimecheck is a linter that finds calls of `time.Now` in your code.
 
 You can install ctxtimecheck by go install.
 
