@@ -2,6 +2,7 @@ package ctxtimecheck
 
 import (
 	"go/types"
+	"iter"
 
 	"github.com/gostaticanalysis/analysisutil"
 	"github.com/gostaticanalysis/ssainspect"
@@ -21,7 +22,7 @@ var Analyzer = &analysis.Analyzer{
 }
 
 func run(pass *analysis.Pass) (any, error) {
-	in := pass.ResultOf[ssainspect.Analyzer].(*ssainspect.Inspector)
+	seq := pass.ResultOf[ssainspect.Analyzer].(iter.Seq[*ssainspect.Cursor])
 
 	timenow, _ := analysisutil.ObjectOf(pass, "time", "Now").(*types.Func)
 	if timenow == nil {
@@ -29,10 +30,9 @@ func run(pass *analysis.Pass) (any, error) {
 		return nil, nil
 	}
 
-	for in.Next() {
-		c := in.Cursor()
-		if analysisutil.Called(c.Instr, nil, timenow) {
-			pass.Reportf(c.Instr.Pos(), "do not use %s, use ctxtime.Now", timenow.FullName())
+	for s := range seq {
+		if analysisutil.Called(s.Instr, nil, timenow) {
+			pass.Reportf(s.Instr.Pos(), "do not use %s, use ctxtime.Now", timenow.FullName())
 		}
 	}
 
