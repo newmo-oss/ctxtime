@@ -21,7 +21,7 @@ var Analyzer = &analysis.Analyzer{
 }
 
 func run(pass *analysis.Pass) (any, error) {
-	in := pass.ResultOf[ssainspect.Analyzer].(*ssainspect.Inspector)
+	inspector := pass.ResultOf[ssainspect.Analyzer].(*ssainspect.Inspector)
 
 	timenow, _ := analysisutil.ObjectOf(pass, "time", "Now").(*types.Func)
 	if timenow == nil {
@@ -29,10 +29,9 @@ func run(pass *analysis.Pass) (any, error) {
 		return nil, nil
 	}
 
-	for in.Next() {
-		c := in.Cursor()
-		if analysisutil.Called(c.Instr, nil, timenow) {
-			pass.Reportf(c.Instr.Pos(), "do not use %s, use ctxtime.Now", timenow.FullName())
+	for s := range inspector.All() {
+		if analysisutil.Called(s.Instr, nil, timenow) {
+			pass.Reportf(s.Instr.Pos(), "do not use %s, use ctxtime.Now", timenow.FullName())
 		}
 	}
 
