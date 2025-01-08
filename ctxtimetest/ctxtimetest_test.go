@@ -12,10 +12,10 @@ import (
 	"github.com/newmo-oss/testid"
 )
 
-func TestWithFixedNow(t *testing.T) {
+func TestSetFixedNow(t *testing.T) {
 	t.Parallel()
 
-	t.Run("before calling WithFixedNow", func(t *testing.T) {
+	t.Run("before calling SetFixedNow", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := testid.WithValue(context.Background(), uuid.New().String())
@@ -27,7 +27,7 @@ func TestWithFixedNow(t *testing.T) {
 		}
 	})
 
-	t.Run("after calling WithFixedNow", func(t *testing.T) {
+	t.Run("after calling SetFixedNow", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := testid.WithValue(context.Background(), uuid.New().String())
@@ -39,7 +39,7 @@ func TestWithFixedNow(t *testing.T) {
 		}
 	})
 
-	t.Run("after calling WithoutFixedNow", func(t *testing.T) {
+	t.Run("after calling UnsetFixedNow", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := testid.WithValue(context.Background(), uuid.New().String())
@@ -48,7 +48,7 @@ func TestWithFixedNow(t *testing.T) {
 		ctxtimetest.UnsetFixedNow(t, ctx)
 		got := ctxtime.Now(ctx)
 		if now == got || now.After(got) {
-			t.Errorf("ctxtime.Now must return current time after calling WithoutFixedNow: %v %v", got, now)
+			t.Errorf("ctxtime.Now must return current time after calling UnsetFixedNow: %v %v", got, now)
 		}
 	})
 
