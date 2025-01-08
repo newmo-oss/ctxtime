@@ -7,9 +7,11 @@ import (
 
 	"github.com/google/uuid"
 
+	"github.com/newmo-oss/gotestingmock"
+	"github.com/newmo-oss/testid"
+
 	"github.com/newmo-oss/ctxtime"
 	"github.com/newmo-oss/ctxtime/ctxtimetest"
-	"github.com/newmo-oss/testid"
 )
 
 func TestWithFixedNow(t *testing.T) {
@@ -82,12 +84,14 @@ func TestWithFixedNow(t *testing.T) {
 	t.Run("unset test ID", func(t *testing.T) {
 		t.Parallel()
 
-		ctx := context.Background()
-		fakeT := &testingT{T: t}
-		now := ctxtime.Now(ctx)
-		ctxtimetest.SetFixedNow(fakeT, ctx, now)
-		if !fakeT.callFailNow {
-			t.Error("ctxtimetest.SetFixedNow must call t.Fatal/t.Fatalf/t.FailNow when test id was not related to the context")
+		got := gotestingmock.Run(func(tb *gotestingmock.TB) {
+			ctx := context.Background()
+			now := ctxtime.Now(ctx)
+			ctxtimetest.SetFixedNow(tb, ctx, now)
+		})
+
+		if !(got.Failed && got.Goexit) {
+			t.Error("ctxtimetest.SetFixedNow must mark failed and exit goroutine of the test when the test id was not related to the context")
 		}
 	})
 
@@ -113,21 +117,4 @@ func TestWithFixedNow(t *testing.T) {
 			t.Errorf("SetFixedNow must allow zero time")
 		}
 	})
-}
-
-type testingT struct {
-	*testing.T
-	callFailNow bool
-}
-
-func (t *testingT) FailNow() {
-	t.callFailNow = true
-}
-
-func (t *testingT) Fatal(args ...any) {
-	t.callFailNow = true
-}
-
-func (t *testingT) Fatalf(format string, args ...any) {
-	t.callFailNow = true
 }
