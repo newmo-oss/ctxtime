@@ -7,8 +7,8 @@ require (
 	github.com/gostaticanalysis/analysisutil v0.7.1
 	github.com/gostaticanalysis/ssainspect v0.3.0
 	github.com/gostaticanalysis/testutil v0.5.2
-	github.com/newmo-oss/gotestingmock v0.1.1
-	github.com/newmo-oss/testid v0.1.0
+	github.com/newmo-oss/gotestingmock v0.1.2
+	github.com/newmo-oss/testid v0.2.0
 	golang.org/x/tools v0.31.0
 )
 

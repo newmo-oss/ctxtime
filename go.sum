@@ -23,8 +23,12 @@ github.com/josharian/txtarfs v0.0.0-20210615234325-77aca6df5bca h1:a8xeK4GsWLE4L
 github.com/josharian/txtarfs v0.0.0-20210615234325-77aca6df5bca/go.mod h1:UbC32ft9G/jG+sZI8wLbIBNIrYr7vp/yqMDa9SxVBNA=
 github.com/newmo-oss/gotestingmock v0.1.1 h1:EtZrif5qSsVrJ4w944pToOL3L9ux0WKwrtKXnzv+Mj8=
 github.com/newmo-oss/gotestingmock v0.1.1/go.mod h1:ee64ZPEODG1GK+c4fHzxRzE9WbMi9VuIgEItMA0yXjI=
+github.com/newmo-oss/gotestingmock v0.1.2 h1:4u0+4juIFH8mGm90BkQ+T4Jl2qKK2qd/Wzry79yVT3U=
+github.com/newmo-oss/gotestingmock v0.1.2/go.mod h1:/clfmHccDd3UnwZPrloKKm+w8rNfzenFTLhMzUh4wFI=
 github.com/newmo-oss/testid v0.1.0 h1:NHe0FfS1b4/z+r2sgcLdHNrRRFZNWR7vEZhBJ4j3Hdk=
 github.com/newmo-oss/testid v0.1.0/go.mod h1:Z2jzbNSa3gGZTBTj7fQs4n0Ke5gw3Oa9vYgySN3IZ00=
+github.com/newmo-oss/testid v0.2.0 h1:vzZ0bbR8cHGwwBUix0DQB8LUCMCpRlxfEUAnfuY/ifI=
+github.com/newmo-oss/testid v0.2.0/go.mod h1:T2pO3QMy/bcbzgKmknRHGm99oAmAE2MjG8kG+twHNpA=
 github.com/otiai10/copy v1.2.0/go.mod h1:rrF5dJ5F0t/EWSYODDu4j9/vEeYHMkc8jt0zJChqQWw=
 github.com/otiai10/copy v1.14.0 h1:dCI/t1iTdYGtkvCuBG2BgR6KZa83PTclw4U5n2wAllU=
 github.com/otiai10/copy v1.14.0/go.mod h1:ECfuL02W+/FkTWZWgQqXPWZgW9oeKCSQ5qVfSc4qc4w=
