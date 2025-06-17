@@ -21,19 +21,37 @@ var Analyzer = &analysis.Analyzer{
 }
 
 func run(pass *analysis.Pass) (any, error) {
-	inspector := pass.ResultOf[ssainspect.Analyzer].(*ssainspect.Inspector)
-
 	timenow, _ := analysisutil.ObjectOf(pass, "time", "Now").(*types.Func)
+	checknow(pass, timenow)
+
+	timedate := analysisutil.ObjectOf(pass, "time", "Date").(*types.Func)
+	checkdate(pass, timedate)
+
+	return nil, nil
+}
+
+func checknow(pass *analysis.Pass, timenow *types.Func) {
 	if timenow == nil {
 		// skip
-		return nil, nil
+		return
 	}
 
-	for s := range inspector.All() {
+	for s := range pass.ResultOf[ssainspect.Analyzer].(*ssainspect.Inspector).All() {
 		if analysisutil.Called(s.Instr, nil, timenow) {
 			pass.Reportf(s.Instr.Pos(), "do not use %s, use ctxtime.Now", timenow.FullName())
 		}
 	}
+}
 
-	return nil, nil
+func checkdate(pass *analysis.Pass, timedate *types.Func) {
+	if timedate == nil {
+		// skip
+		return
+	}
+
+	for s := range pass.ResultOf[ssainspect.Analyzer].(*ssainspect.Inspector).All() {
+		if analysisutil.Called(s.Instr, nil, timedate) {
+			pass.Reportf(s.Instr.Pos(), "do not use %s, use ctxtime.Now and its receiver methods to calculate date", timedate.FullName())
+		}
+	}
 }
