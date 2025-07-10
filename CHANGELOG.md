@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.2.2](https://github.com/newmo-oss/ctxtime/compare/v0.2.1...v0.2.2) - 2025-06-17
+- Add dependabot by @tenntenn in https://github.com/newmo-oss/ctxtime/pull/11
+- Bump github.com/gostaticanalysis/testutil from 0.5.2 to 0.6.1 by @dependabot in https://github.com/newmo-oss/ctxtime/pull/13
+- Bump golang.org/x/tools from 0.31.0 to 0.33.0 by @dependabot in https://github.com/newmo-oss/ctxtime/pull/15
+- Update Go version to 1.23.10 by @tenntenn in https://github.com/newmo-oss/ctxtime/pull/16
+- Bump golang.org/x/tools from 0.33.0 to 0.34.0 by @dependabot in https://github.com/newmo-oss/ctxtime/pull/17
+
 ## [v0.2.1](https://github.com/newmo-oss/ctxtime/compare/v0.2.0...v0.2.1) - 2025-03-11
 - Update go version and dependencies by @tenntenn in https://github.com/newmo-oss/ctxtime/pull/9
 
