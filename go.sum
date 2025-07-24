@@ -21,8 +21,10 @@ github.com/josharian/mapfs v0.0.0-20210615234106-095c008854e6 h1:c+ctPFdISggaSNC
 github.com/josharian/mapfs v0.0.0-20210615234106-095c008854e6/go.mod h1:Rv/momJI8DgrWnBZip+SgagpcgORIZQE5SERlxNb8LY=
 github.com/josharian/txtarfs v0.0.0-20240408113805-5dc76b8fe6bf h1:ZWuoyLMwZvLJ6OHUhPq1sZHa37Pikt6DXkZPhhOBzEE=
 github.com/josharian/txtarfs v0.0.0-20240408113805-5dc76b8fe6bf/go.mod h1:UbC32ft9G/jG+sZI8wLbIBNIrYr7vp/yqMDa9SxVBNA=
-github.com/newmo-oss/gotestingmock v0.1.2 h1:4u0+4juIFH8mGm90BkQ+T4Jl2qKK2qd/Wzry79yVT3U=
-github.com/newmo-oss/gotestingmock v0.1.2/go.mod h1:/clfmHccDd3UnwZPrloKKm+w8rNfzenFTLhMzUh4wFI=
+github.com/newmo-oss/go-caller v0.1.0 h1:jZS2Vz8587TXXUZPWhVUTH9EwndOMJUYrae6tHGV5HI=
+github.com/newmo-oss/go-caller v0.1.0/go.mod h1:5m36S/OzQm/FwFnT1Z9KJyzf1Kf8A3kdI0x92c04+a4=
+github.com/newmo-oss/gotestingmock v0.2.0 h1:dw4og7X7pX5/9ObHg3BLKNyhH9XsVnY+P8v3r2Jj7yQ=
+github.com/newmo-oss/gotestingmock v0.2.0/go.mod h1:e0m8IIbvI9qQw3aIiia+nnVPcJylnPpD78hKWNWXSVM=
 github.com/newmo-oss/testid v0.2.0 h1:vzZ0bbR8cHGwwBUix0DQB8LUCMCpRlxfEUAnfuY/ifI=
 github.com/newmo-oss/testid v0.2.0/go.mod h1:T2pO3QMy/bcbzgKmknRHGm99oAmAE2MjG8kG+twHNpA=
 github.com/otiai10/copy v1.2.0/go.mod h1:rrF5dJ5F0t/EWSYODDu4j9/vEeYHMkc8jt0zJChqQWw=
