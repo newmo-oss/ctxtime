@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.2.3](https://github.com/newmo-oss/ctxtime/compare/v0.2.2...v0.2.3) - 2025-12-19
+- ctxtimecheck also time.Date usage by @sivchari in https://github.com/newmo-oss/ctxtime/pull/18
+
 ## [v0.2.2](https://github.com/newmo-oss/ctxtime/compare/v0.2.1...v0.2.2) - 2025-06-17
 - Add dependabot by @tenntenn in https://github.com/newmo-oss/ctxtime/pull/11
 - Bump github.com/gostaticanalysis/testutil from 0.5.2 to 0.6.1 by @dependabot in https://github.com/newmo-oss/ctxtime/pull/13
