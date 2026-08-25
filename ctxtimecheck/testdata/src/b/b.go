@@ -28,3 +28,19 @@ func ng() {
 		},
 	}
 }
+
+var pkgDateFn = func() time.Time {
+	return time.Date(0, 0, 0, 0, 0, 0, 0, time.Local) // want `do not use time\.Date, use ctxtime\.Now and its receiver methods to calculate date`
+}
+
+var pkgDate = time.Date(0, 0, 0, 0, 0, 0, 0, time.Local) // want `do not use time\.Date, use ctxtime\.Now and its receiver methods to calculate date`
+
+var pkgTable = []struct {
+	DateFunc func() time.Time
+}{
+	{
+		DateFunc: func() time.Time {
+			return time.Date(0, 0, 0, 0, 0, 0, 0, time.Local) // want `do not use time\.Date, use ctxtime\.Now and its receiver methods to calculate date`
+		},
+	},
+}

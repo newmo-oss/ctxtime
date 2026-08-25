@@ -9,8 +9,6 @@ github.com/gostaticanalysis/analysisutil v0.7.1/go.mod h1:v21E3hY37WKMGSnbsw2S/o
 github.com/gostaticanalysis/comment v1.4.2/go.mod h1:KLUTGDv6HOCotCH8h2erHKmpci2ZoR8VPu34YA2uzdM=
 github.com/gostaticanalysis/comment v1.5.0 h1:X82FLl+TswsUMpMh17srGRuKaaXprTaytmEpgnKIDu8=
 github.com/gostaticanalysis/comment v1.5.0/go.mod h1:V6eb3gpCv9GNVqb6amXzEUX3jXLVK/AdA+IrAMSqvEc=
-github.com/gostaticanalysis/ssainspect v0.3.0 h1:IUftUp6UNAsE/nDU0YQI/NIZp49/LaYnACEdXjny0lU=
-github.com/gostaticanalysis/ssainspect v0.3.0/go.mod h1:gIcyFqS5D8mwQyjanLrQFf+dCD9bevQZjjajuGmA3f0=
 github.com/gostaticanalysis/testutil v0.3.1-0.20210208050101-bfb5c8eec0e4/go.mod h1:D+FIZ+7OahH3ePw/izIEeH5I06eKs1IKI4Xr64/Am3M=
 github.com/gostaticanalysis/testutil v0.6.1 h1:DeKCG96QlhtNAz+/z2jjO3gIHFV+lHEwELddAsLohxg=
 github.com/gostaticanalysis/testutil v0.6.1/go.mod h1:XfUs9IH5sPfXbPIq+kHR64fCpB6pBf5mYeaZQdaTBpw=
@@ -34,8 +32,6 @@ github.com/otiai10/mint v1.3.0/go.mod h1:F5AjcsTsWUqX+Na9fpHb52P8pcRX2CI6A3ctIT9
 github.com/otiai10/mint v1.3.1/go.mod h1:/yxELlJQ0ufhjUwhshSj+wFjZ78CnZ48/1wtmBH1OTc=
 github.com/otiai10/mint v1.6.3 h1:87qsV/aw1F5as1eH1zS/yqHY85ANKVMgkDrf9rcxbQs=
 github.com/otiai10/mint v1.6.3/go.mod h1:MJm72SBthJjz8qhefc4z1PYEieWmy8Bku7CjcAqyUSM=
-github.com/tenntenn/golden v0.5.4 h1:laddoKuzbzGYVinsSZyEPavPh4muyKd2SMhJTKH3F3s=
-github.com/tenntenn/golden v0.5.4/go.mod h1:0xI/4lpoHR65AUTmd1RKR9S1Uv0JR3yR2Q1Ob2bKqQA=
 github.com/tenntenn/modver v1.0.1 h1:2klLppGhDgzJrScMpkj9Ujy3rXPUspSjAcev9tSEBgA=
 github.com/tenntenn/modver v1.0.1/go.mod h1:bePIyQPb7UeioSRkw3Q0XeMhYZSMx9B8ePqg6SAMGH0=
 github.com/tenntenn/text/transform v0.0.0-20200319021203-7eef512accb3 h1:f+jULpRQGxTSkNYKJ51yaw6ChIqO+Je8UqsTKN/cDag=
