@@ -14,3 +14,19 @@ func ng() {
 	}()
 	stdtime.Now() // want `do not use time\.Now, use ctxtime\.Now`
 }
+
+var pkgFn = func() {
+	time.Now() // want `do not use time\.Now, use ctxtime\.Now`
+}
+
+var pkgNow = time.Now() // want `do not use time\.Now, use ctxtime\.Now`
+
+var pkgTable = []struct {
+	fn func()
+}{
+	{
+		fn: func() {
+			time.Now() // want `do not use time\.Now, use ctxtime\.Now`
+		},
+	},
+}

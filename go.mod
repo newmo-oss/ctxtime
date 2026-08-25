@@ -5,7 +5,6 @@ go 1.23.10
 require (
 	github.com/google/uuid v1.6.0
 	github.com/gostaticanalysis/analysisutil v0.7.1
-	github.com/gostaticanalysis/ssainspect v0.3.0
 	github.com/gostaticanalysis/testutil v0.6.1
 	github.com/newmo-oss/gotestingmock v0.1.2
 	github.com/newmo-oss/testid v0.2.0
